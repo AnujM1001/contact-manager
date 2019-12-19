@@ -1,0 +1,49 @@
+.contact-row {
+    .contact-initials {
+        width: 35px;
+        height: 35px;
+        padding: 9px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        color: #fff;
+        font-weight: 600;
+        background: #000;
+        margin-right: 16px;
+        font-size: .8em;
+    }
+    .contact-name {
+        text-align: left;
+        line-height: 2.3;
+    }
+    .contact-status {
+        line-height: 2.3;
+    }
+}
+
+.contact-details {
+    color: #1e1e1e;
+    span {
+        text-transform: capitalize;
+    }
+    .active {
+        color: #7cb342;
+    }
+    .inactive {
+        color: orange;
+    }
+    .delete-image {
+        width: 25px;
+        position: absolute;
+        right: 30px;
+        cursor: pointer;
+    }
+    .edit-image {
+        width: 25px;
+        position: absolute;
+        right: 100px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,32 @@
+header {
+    background: #2196F3;
+    padding: 16px;
+    >* {
+        display: flex;
+        align-items: center;
+    }
+    .menu-container {
+        margin-left: 16px;
+        padding-right: 10px;
+        box-shadow: 5px 0px 14px -10px rgba(255, 255, 255, 0.8);
+    }
+    .page-title {
+        font-size: 2em;
+        color: #fff;
+        span {
+            vertical-align: middle;
+        }
+    }
+    .search-container {
+        input {
+            border: 0;
+            border-radius: 3px;
+            height: 70%;
+            width: 80%;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+label {
+    display: block;
+    &.radio-label {
+        display: inline-block;
+    }
+}
+
+input[type=radio] {
+    width: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    margin: 0 20px;
+    &:nth-child(2) {
+        margin-left: 0;
+    }
+}
+
+.save-button {
+    border: 0;
+    background: #2196F3;
+    color: #fff;
+    padding: 10px 30px;
+    min-width: 120px;
+}

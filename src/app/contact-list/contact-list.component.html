@@ -1,0 +1,35 @@
+<div class="list-container">
+    <div class="title">
+        <span>
+            Contacts
+        </span>
+    </div>
+    <div class="add-new-contact" (click)="openNewModal()">
+        <img src="assets/images/add.png" alt="">
+    </div>
+    <ng-container *ngIf="contactList; else loading">
+        <ngb-accordion #acc="ngbAccordion" activeIds="">
+            <ng-container *ngFor="let contact of contactList;let i = index">
+                <ngb-panel [id]="'panel' + i" (click)="activeIds = ('panel' + i)">
+                    <ng-template ngbPanelTitle>
+                        <div class="contact-row row">
+                            <span class="contact-initials">{{contact.firstName.substring(0,1) + contact.lastName.substring(0,1)}}</span>
+                            <span class="contact-name col-4">{{contact.firstName + ' ' + contact.lastName}}</span>
+                            <span class="contact-status {{contact.status.toLowerCase()}}">{{contact.status}}</span>
+                        </div>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <app-contact-details *ngIf="!editing" [contact]="contact" (deleteEvent)="deleteContact($event,i)" (editing)="editing = true"></app-contact-details>
+                        <app-contact-editor *ngIf="editing" [contactDataSetter]="contact" (saveContactDetails)="saveContact($event,i);editing = false;"></app-contact-editor>
+                    </ng-template>
+                </ngb-panel>
+            </ng-container>
+        </ngb-accordion>
+    </ng-container>
+
+    <ng-template #loading>
+        <span>
+            Loading...
+        </span>
+    </ng-template>
+</div>

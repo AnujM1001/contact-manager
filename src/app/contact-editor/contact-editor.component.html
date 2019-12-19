@@ -1,0 +1,55 @@
+<div class="form-container">
+    <form [formGroup]="contactForm" (ngSubmit)="saveContact()">
+        <div class="row">
+            <div class="form-group col-5">
+                <label>First Name</label>
+                <input required type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && contactForm.controls.firstName.errors }" />
+                <div *ngIf="submitted && contactForm.controls.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="contactForm.controls.firstName.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Last Name</label>
+                <input required type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && contactForm.controls.lastName.errors }" />
+                <div *ngIf="submitted && contactForm.controls.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="contactForm.controls.lastName.errors.required">Last Name is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-5">
+                <label>Phone Number</label>
+                <input required type="number" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && contactForm.controls.phoneNumber.errors }" />
+                <div *ngIf="submitted && contactForm.controls.phoneNumber.errors" class="invalid-feedback">
+                    <div *ngIf="contactForm.controls.phoneNumber.errors.required">Phone Number is required</div>
+                    <div *ngIf="contactForm.controls.phoneNumber.errors.pattern">Enter valid phone number</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Email</label>
+                <input required type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && contactForm.controls.email.errors }" />
+                <div *ngIf="submitted && contactForm.controls.email.errors" class="invalid-feedback">
+                    <div *ngIf="contactForm.controls.email.errors.required">Email is required</div>
+                    <div *ngIf="contactForm.controls.email.errors.email">Enter valid email address</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-5">
+                <label>Status</label>
+                <input required type="radio" id="active" value="active" formControlName="status" class="form-control" [ngClass]="{ 'is-invalid': submitted && contactForm.controls.firstName.errors }" />
+                <label class="radio-label" for="active">Active</label>
+                <input required type="radio" id="inactive" value="inactive" formControlName="status" class="form-control" [ngClass]="{ 'is-invalid': submitted && contactForm.controls.firstName.errors }" />
+                <label class="radio-label" for="inactive">Inactive</label>
+                <div *ngIf="submitted && contactForm.controls.status.errors" class="invalid-feedback">
+                    <div *ngIf="contactForm.controls.status.errors.required">Status is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="save-button">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

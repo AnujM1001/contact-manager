@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'partials.scss';
+html,
+body {
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.collapse,
+.collapse.show {
+    display: block !important;
+    transition: all .25s ease-in-out;
+}
+
+.btn.btn-link {
+    width: 100%;
+}
+
+.modal-content {
+    padding: 20px 40px;
+}
+
+.modal-header {
+    font-size: 2em;
+    padding-left: 0;
+    font-weight: 400;
+    span {
+        line-height: 1;
+    }
+    img {
+        width: 35px;
+        cursor: pointer;
+    }
+}
