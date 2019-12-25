@@ -4,6 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddNewContactComponent } from './add-new-contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppTestingModule } from '../appTstingModule';
 
 describe('AddNewContactComponent', () => {
   let component: AddNewContactComponent;
@@ -11,12 +12,12 @@ describe('AddNewContactComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AddNewContactComponent],
+      declarations: [
+        // AddNewContactComponent
+      ],
       imports: [
-        NgbModule,
-        ReactiveFormsModule,
-        HttpClientModule
-      ]
+        AppTestingModule
+      ],
     })
       .compileComponents();
   }));
